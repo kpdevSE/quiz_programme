@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {IoIosSend} from "react-icons/io";
+import Navigation from "../../components/navigation";
 import {quiz} from "../../data";
 import './style.css';
 
@@ -58,8 +59,27 @@ export default function Quiz()
 
     return (
         <div>
+            <Navigation />
             <div className="container">
-                <h1>Quiz</h1>
+                <div>
+                    <div className='quiz-container'>
+                        <h3>Results</h3>
+                        <h3>Overall {(result.score / (questions.length * 5)) * 100}%</h3>
+                        <p style={{color: "blue", fontWeight: "bold"}}>
+                            Total Questions: <span>{questions.length}</span>
+                        </p>
+                        <p style={{color: "black", fontWeight: "bold"}}>
+                            Total Score: <span>{result.score}</span>
+                        </p>
+                        <p style={{color: "green", fontWeight: "bold"}}>
+                            Correct Answers: <span>{result.correctAnswers}</span>
+                        </p>
+                        <p style={{color: "red", fontWeight: "bold"}}>
+                            Wrong Answers: <span>{result.wrongAnswers}</span>
+                        </p>
+                    </div>
+                </div>
+                <h1 style={{marginTop: "30px"}}>Quiz</h1>
                 <div>
                     <h2>
                         Question: {activeQuestion + 1}
@@ -86,7 +106,7 @@ export default function Quiz()
                             </ul>
                             <button onClick={nextQuestion} className='btn' style={{backgroundColor: "green", border: "none"}}>
                                 {activeQuestion === questions.length - 1 ? 'Finish' : (
-                                    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+                                    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: '3'}}>
                                         <IoIosSend />
                                         <p>Submit</p>
                                     </div>
@@ -98,20 +118,6 @@ export default function Quiz()
                         </div>
                     ) : (
                         <div className='quiz-container'>
-                            <h3>Results</h3>
-                            <h3>Overall {(result.score / (questions.length * 5)) * 100}%</h3>
-                            <p style={{color: "blue", fontWeight: "bold"}}>
-                                Total Questions: <span>{questions.length}</span>
-                            </p>
-                            <p style={{color: "black", fontWeight: "bold"}}>
-                                Total Score: <span>{result.score}</span>
-                            </p>
-                            <p style={{color: "green", fontWeight: "bold"}}>
-                                Correct Answers: <span>{result.correctAnswers}</span>
-                            </p>
-                            <p style={{color: "red", fontWeight: "bold"}}>
-                                Wrong Answers: <span>{result.wrongAnswers}</span>
-                            </p>
                             <button onClick={() => window.location.reload()}>Restart</button>
                         </div>
                     )}
