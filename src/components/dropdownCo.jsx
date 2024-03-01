@@ -6,9 +6,9 @@ const items = [
     {
         key: '1',
         label: (
-            <div  >
-                1st menu item
-            </div>
+            <p  >
+                My Profile
+            </p>
 
         ),
         icon: <SmileOutlined />,
@@ -16,27 +16,17 @@ const items = [
     {
         key: '2',
         label: (
-            <div >
-                2nd menu item
-            </div>
+            <p >
+                Settings
+            </p>
         ),
         icon: <SmileOutlined />,
         disabled: false,
     },
     {
         key: '3',
-        label: (
-            <div  >
-                3rd menu item
-            </div>
-        ),
-        icon: <SmileOutlined />,
-        disabled: false,
-    },
-    {
-        key: '4',
         danger: true,
-        label: 'a danger item',
+        label: 'Log Out',
     },
 ];
 const DropdownCom = () => (

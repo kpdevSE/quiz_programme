@@ -15,7 +15,7 @@ const Navigation = () =>
     };
     return (
         <>
-            <div style={{width: "85%", height: "40px", margin: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: "#f8f8f8", borderRadius: "10px", marginTop: "10px"}}>
+            <div style={{width: "85%", height: "40px", margin: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: "#ffff", borderRadius: "10px", marginTop: "10px"}}>
                 <div type="primary" onClick={showDrawer} style={{width: "100px", height: "20px", paddingLeft: '10px'}}>
                     <GiHamburgerMenu style={
                         {

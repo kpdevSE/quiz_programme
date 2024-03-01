@@ -62,7 +62,7 @@ export default function Quiz()
             <Navigation />
             <div className="container">
                 <div>
-                    <div className='quiz-container'>
+                    <div className='quiz-container' style={{fontFamily: " 'Exo', sans-serif"}}>
                         <h3>Results</h3>
                         <h3>Overall {(result.score / (questions.length * 5)) * 100}%</h3>
                         <p style={{color: "blue", fontWeight: "bold"}}>
@@ -71,10 +71,10 @@ export default function Quiz()
                         <p style={{color: "black", fontWeight: "bold"}}>
                             Total Score: <span>{result.score}</span>
                         </p>
-                        <p style={{color: "green", fontWeight: "bold"}}>
+                        <p style={{color: "#66bb6a", fontWeight: "bold"}}>
                             Correct Answers: <span>{result.correctAnswers}</span>
                         </p>
-                        <p style={{color: "red", fontWeight: "bold"}}>
+                        <p style={{color: "#f44336", fontWeight: "bold"}}>
                             Wrong Answers: <span>{result.wrongAnswers}</span>
                         </p>
                     </div>
@@ -91,7 +91,7 @@ export default function Quiz()
                 </div>
                 <div>
                     {!showResult ? (
-                        <div className='quiz-container'>
+                        <div className='quiz-container' style={{fontFamily: " 'Exo', sans-serif"}}>
                             <h3>{questions[activeQuestion].question}</h3>
                             <ul>
                                 {answers.map((answer, idx) => (
@@ -106,13 +106,13 @@ export default function Quiz()
                             </ul>
                             <button onClick={nextQuestion} className='btn' style={{backgroundColor: "green", border: "none"}}>
                                 {activeQuestion === questions.length - 1 ? 'Finish' : (
-                                    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: '3'}}>
-                                        <IoIosSend />
-                                        <p>Submit</p>
+                                    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: '50px', fontFamily: " 'Exo', sans-serif"}}>
+                                        <p style={{fontWeight: "bold", fontSize: "20px"}}>Submit</p>
+                                        <IoIosSend style={{fontWeight: "bold", fontSize: "20px"}} />
                                     </div>
                                 )}
                             </button>
-                            <button onClick={skipQuestion} className='btn' style={{backgroundColor: "red", border: "none"}}>
+                            <button onClick={skipQuestion} className='btn' style={{backgroundColor: "red", border: "none", fontFamily: "'Exo', sans-serif", fontWeight: "bold", fontSize: "20px"}}>
                                 Skip
                             </button>
                         </div>
